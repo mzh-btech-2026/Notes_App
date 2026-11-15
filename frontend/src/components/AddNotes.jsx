@@ -3,6 +3,21 @@ import { useState } from "react";
 
 export default function AddNotes({cancel,save}){
 
+
+    const [title,settitle] =useState("");
+    const [description,setdescription] =useState("");
+
+    const handlesave =()=>{
+
+        if(!title.trim() || !description.trim()){
+            alert("please fill all details");
+            return ;
+        }
+
+        alert("Title :"+title)
+
+
+    }
    
 
 
@@ -43,6 +58,7 @@ export default function AddNotes({cancel,save}){
          className="
          focus:outline-none pl-[20px] border rounded-[5px] w-[340px] h-[35px] border-blue-300 placeholder:text-gray-400
          sm:w-[450px] h-[40px]" 
+         onChange={(e)=>settitle(e.target.value)}
          />
         </div>
 
@@ -63,7 +79,10 @@ export default function AddNotes({cancel,save}){
          className="
          focus:outline-none pl-[20px] border rounded-[5px] w-[340px] h-[100px] border-blue-300  placeholder:text-gray-400
          sm:w-[450px]"
- />
+         onChange={(e)=>setdescription(e.target.value)}
+             
+            />
+
         </div>
 
         {/* ------ button --------- */}
@@ -72,6 +91,8 @@ export default function AddNotes({cancel,save}){
         className="
         border border-gray-300 rounded-[10px] w-[100px] h-[30px] bg-green-600 mt-[20px] cursor-pointer shadow-[0_4px_10px_rgba(0,0,0,0.2)]
         "
+
+        onClick={handlesave}
         >
             
             Add</button>

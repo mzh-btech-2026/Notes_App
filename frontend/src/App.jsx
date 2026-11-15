@@ -21,13 +21,7 @@ export default function App() {
 
   }
 
-  const handleSave=(newNote)=>{
-
-    const note = {
-
-     
-    }
-  }
+ 
 
 
 
